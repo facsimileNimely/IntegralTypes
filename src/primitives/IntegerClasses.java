@@ -27,6 +27,8 @@ public class IntegerClasses {
         System.out.println("Number of bits in a long " + Long.SIZE);
         System.out.println("Min: " + Long.MIN_VALUE);
         System.out.println("Max: " + Long.MAX_VALUE);
+
+        System.out.println(decimalToBinary(25));
     }
 
     public static void assignHex(){
@@ -47,5 +49,14 @@ public class IntegerClasses {
         int num2 = 0x206A_FFFF;
         System.out.println("Binary value: " + Integer.toBinaryString(num2));
         System.out.println("Decimal value: " + num2);
+    }
+
+    public static String decimalToBinary(int decimal){
+        String toReturn = "";
+        while (decimal > 0){
+            toReturn =  decimal % 2 + toReturn;
+            decimal = decimal / 2;
+        }
+        return toReturn;
     }
 }
